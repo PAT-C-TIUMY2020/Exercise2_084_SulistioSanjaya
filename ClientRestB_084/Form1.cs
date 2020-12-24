@@ -138,5 +138,18 @@ namespace ClientRestB_084
         {
 
         }
+
+        public void clear()
+        {
+            textBoxNIM.Text = "";
+            textBoxNama.Text = "";
+            textBoxProdi.Text = "";
+            textBoxAngkatan.Text = "";
+        
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
     }
 }

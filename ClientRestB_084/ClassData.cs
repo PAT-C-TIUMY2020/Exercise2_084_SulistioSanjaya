@@ -20,14 +20,6 @@ namespace ClientRestB_084
             return data;
         }
 
-        public string sumData()
-        {
-            var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
-            var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
-            int i = data.Count();
-            string sum = i.ToString();
-            return sum;
-        }
 
         public List<Mahasiswa> getAllData()
         {
