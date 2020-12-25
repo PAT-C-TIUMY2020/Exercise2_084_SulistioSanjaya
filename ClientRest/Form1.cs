@@ -18,9 +18,9 @@ namespace ClientRest
         public Form1()
         {
             InitializeComponent();
-            TampilData();
+            //TampilData();
         }
-        string baseUrl = "http://localhost:1907/";
+        string baseUrl = "http://localhost:1908/";
         private void Creat_Click(object sender, EventArgs e)
         {
             Mahasiswa mhs = new Mahasiswa();
@@ -34,20 +34,20 @@ namespace ClientRest
             postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
             string response = postdata.UploadString(baseUrl + "Mahasiswa", data);
             Console.WriteLine(response);
-            TampilData();
+            //TampilData();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
         }
-        public void TampilData()
+        /*public void TampilData()
         {
-            var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
+            var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
             var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
 
             dataGridView1.DataSource = data;
-        }
+        }*/
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -59,7 +59,7 @@ namespace ClientRest
 
         public void SearchData()
         {
-            var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
+            var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
             var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
             string nim = NIMSearch.Text;
             if (nim == null || nim == "")
@@ -93,6 +93,17 @@ namespace ClientRest
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        public List<Mahasiswa> getAllData()
+        {
+            var json = new WebClient().DownloadString("http://localhost:1908/Mahasiswa");
+            var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
+            return data;
+        }
+
+        private void btDatasemua_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = getAllData();
         }
     }
     [DataContract]

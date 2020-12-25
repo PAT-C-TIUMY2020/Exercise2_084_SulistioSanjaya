@@ -41,6 +41,7 @@
             this.btSearch = new System.Windows.Forms.Button();
             this.btClear = new System.Windows.Forms.Button();
             this.NIMSearch = new System.Windows.Forms.TextBox();
+            this.btDatasemua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,11 +156,22 @@
             this.NIMSearch.TabIndex = 13;
             this.NIMSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btDatasemua
+            // 
+            this.btDatasemua.Location = new System.Drawing.Point(441, 169);
+            this.btDatasemua.Name = "btDatasemua";
+            this.btDatasemua.Size = new System.Drawing.Size(75, 23);
+            this.btDatasemua.TabIndex = 14;
+            this.btDatasemua.Text = "Lihat Data";
+            this.btDatasemua.UseVisualStyleBackColor = true;
+            this.btDatasemua.Click += new System.EventHandler(this.btDatasemua_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 537);
+            this.Controls.Add(this.btDatasemua);
             this.Controls.Add(this.NIMSearch);
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.btSearch);
@@ -196,6 +208,7 @@
         private System.Windows.Forms.TextBox txtNIM;
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.TextBox NIMSearch;
+        private System.Windows.Forms.Button btDatasemua;
     }
 }
 
